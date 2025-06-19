@@ -51,7 +51,7 @@ pipeline {
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s|dockaleem/shopcart:v[0-9.]*|dockaleem/shopcart:${versionTag}|" deploymentservice.yml
                     git add deploymentservice.yml
-                    git commit -m "Update deployment image to version ${BUILD_NUMBER}"
+                    git commit -m "Update deployment image to version v${BUILD_NUMBER}.0"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                 '''
                           
